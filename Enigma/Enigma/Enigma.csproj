@@ -1,0 +1,45 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    <PackageReference Include="Xamarin.Forms" Version="3.1.0.697729" />
+    <PackageReference Include="Xam.Plugin.Media" Version="4.0.1.5" />
+    <PackageReference Include="Octane.Xam.VideoPlayer" Version="2.2.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Remove="MainPage.xaml" />
+    <EmbeddedResource Remove="ImagemViewPage.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="LoginPage.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="ImagemViewPage.xaml.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="LoginPage.xaml.cs">
+      <DependentUpon>LoginPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="CadastroPage.xaml.cs">
+      <DependentUpon>CadastroPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="MasterDetalhesPage.xaml.cs">
+      <DependentUpon>MasterDetalhesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="ConfigPage.xaml.cs">
+      <DependentUpon>ConfigPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="MateriasPage.xaml.cs">
+      <DependentUpon>MateriasPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EnigmaClass">
+      <HintPath>..\..\..\..\OneDrive\Windows - Mac\EnigmaClass.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>

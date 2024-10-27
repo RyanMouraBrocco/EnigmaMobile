@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="Enigma.PerfilPage" BackgroundImage="FundoMenu.jpg">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+                <StackLayout>
+                    <StackLayout.Padding>
+                        <OnPlatform x:TypeArguments="Thickness" iOS="0,20,0,0" Android="0,0,0,0"/>
+                    </StackLayout.Padding>
+                    <Image Source="SairBotao.png" HeightRequest="30" WidthRequest="30" VerticalOptions="Start" HorizontalOptions="End" x:Name="btnsair"/>
+                    <StackLayout VerticalOptions="Center" Grid.Row="0" Grid.Column="0" Margin="10,20,10,20">
+                        <Label Text="Perfil" TextColor="#000449" FontSize="70" HorizontalOptions="CenterAndExpand" FontAttributes="Bold" />
+                        <Frame VerticalOptions="Center">
+                           <StackLayout>
+                                <Label HorizontalOptions="Start" TextColor="#000449" FontSize="Medium" Text="Nome"/>
+                                <Entry HorizontalOptions="FillAndExpand" MaxLength="100" FontSize="Medium" x:Name="txtnome" />
+                                <Label HorizontalOptions="Start" TextColor="#000449"  FontSize="Medium" Text="Email"/>
+                                <Entry HorizontalOptions="FillAndExpand" MaxLength="150" FontSize="Medium" x:Name="txtemail"/>
+                                <Label HorizontalOptions="Start" TextColor="#000449" FontSize="Medium" Text="Foto"/>
+                                <Frame Margin="5,5,5,5">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="*"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Button Text="Tirar Foto" Grid.Row="0" Grid.Column="0" Clicked="Tirar_ClickedAsync"/>
+                                        <Button Text="Escolher do álbum" Grid.Row="1" Grid.Column="0" Clicked="Escolher_ClickedAsync"/>
+                                        <Image Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" x:Name="imgfoto"/>
+                                    </Grid>
+                                </Frame>
+                            </StackLayout> 
+                        </Frame>
+                    <Button TextColor="White" Text="Salvar"  BackgroundColor="#000449" HorizontalOptions="FillAndExpand" HeightRequest="50" Clicked="Handle_ClickedAsync"/>
+                    </StackLayout>
+                </StackLayout>
+             <Frame x:Name="frm_carregando" IsVisible="false" Grid.Row="0" Grid.Column="0" BackgroundColor="White" HeightRequest="90" WidthRequest="100" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" >
+                    <StackLayout>
+                        <ActivityIndicator Color="#000449"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  IsEnabled="true" IsRunning="true" IsVisible="true" BackgroundColor="Transparent"/>
+                        <Label Text="Carregando ..."  FontSize="Small" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" />
+                    </StackLayout>
+                </Frame>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>UIDeviceFamily</key>
+	<array>
+		<integer>1</integer>
+		<integer>2</integer>
+	</array>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+	</array>
+	<key>UISupportedInterfaceOrientations~ipad</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>MinimumOSVersion</key>
+	<string>8.0</string>
+	<key>CFBundleDisplayName</key>
+	<string>Enigma</string>
+	<key>NSCameraUsageDescription</key>
+	<string>O app deseja ter acesso a câmera</string>
+	<key>CFBundleName</key>
+	<string>Enigma</string>
+	<key>XSAppIconAssets</key>
+	<string>Assets.xcassets/AppIcon.appiconset</string>
+	<key>UIStatusBarStyle</key>
+	<string>UIStatusBarStyleLightContent</string>
+	<key>UIStatusBarHidden</key>
+	<true/>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>O app deseja ter acesso a fotos</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>O app deseja ter acesso a biblioteca</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
+	<key>XSLaunchImageAssets</key>
+	<string>Assets.xcassets/LaunchImage.launchimage</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.Enigma.Enigma.Enigma</string>
+	<key>NSContactsUsageDescription</key>
+	<string>This app requires contacts access to function properly.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>O App gostaria de ter acesso ao microfone</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>O App gostaria de ter acesso ao Calendário</string>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>O App gostaria de ter acesso a biblioteca de Mídia</string>
+	<key>Custom Property</key>
+	<string></string>
+	<key>UIRequiresPersistentWiFi</key>
+	<true/>
+	<key>NSSiriUsageDescription</key>
+	<string>O App deseja ter acesso a Siri</string>
+	<key>CFBundleShortVersionString</key>
+	<string>2.0</string>
+	<key>CFBundleVersion</key>
+	<string>2.0</string>
+</dict>
+</plist>

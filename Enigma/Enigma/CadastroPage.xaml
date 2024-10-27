@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="Enigma.CadastroPage"
+             BackgroundImage="FundoA.png">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout VerticalOptions="CenterAndExpand">
+                <StackLayout.Padding>
+                    <OnPlatform x:TypeArguments="Thickness" Android="30,30,30,30" iOS="15,15,15,15"/>
+                </StackLayout.Padding>
+                <Frame BackgroundColor="White" >
+                    <StackLayout>
+                        <Label Text="Cadastro" TextColor="Red" FontSize="30" HorizontalOptions="CenterAndExpand"/>
+                        <Entry Placeholder="Nome" PlaceholderColor="Silver" MaxLength="100" HorizontalOptions="FillAndExpand" x:Name="TxtNome" />
+                        <Entry Placeholder="Email" PlaceholderColor="Silver" Keyboard="Email" MaxLength="150" HorizontalOptions="FillAndExpand" x:Name="TxtEmail" />
+                        <Entry Placeholder="Senha" PlaceholderColor="Silver" IsPassword="true"  HorizontalOptions="FillAndExpand" x:Name="TxtSenha" />
+                        <Entry Placeholder="Confir. Senha" PlaceholderColor="Silver" IsPassword="true" HorizontalOptions="FillAndExpand" x:Name="TxtConfirmarSenha" />
+                        <Button Text="Cadastrar-se" TextColor="White" BackgroundColor="#000449" FontSize="15" HeightRequest="100" Clicked="Cadastrar_Clicked" x:Name="BtnCadastrar" />
+                    </StackLayout>
+                </Frame>
+                <Button Text="Cancelar" BackgroundColor="Transparent" TextColor="White" FontSize="20" Clicked="Cancelar_Clicked" x:Name="BtnCancelar"/>
+            </StackLayout>
+        </ScrollView>    
+
+    </ContentPage.Content>
+</ContentPage>

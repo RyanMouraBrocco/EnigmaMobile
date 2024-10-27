@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="Enigma.ForumPage">
+    <ContentPage.Content>
+         <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+                <StackLayout Grid.Row="0" Grid.Column="0">
+                    <SearchBar TextColor="Black" Placeholder="Digite a pergunta ..." CancelButtonColor="#000449" x:Name="txtbusca" TextChanged="Handle_TextChanged"/>
+                    <ListView ItemTapped="Handle_ItemTappedAsync" VerticalOptions="FillAndExpand" RowHeight="80" HasUnevenRows="true" x:Name="Lista" RefreshAllowed="true" IsPullToRefreshEnabled="true" Refreshing="Handle_RefreshingAsync">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout>
+                                        <Label Text="{Binding ID}" IsVisible="false"/>
+                                        <Label Text="{Binding Titulo}" FontSize="Large" HorizontalTextAlignment="Center" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <BoxView BackgroundColor="White" Grid.Row="0" Grid.Column="0" HeightRequest="20" HorizontalOptions="FillAndExpand"/> 
+                        <Button BackgroundColor="Transparent" HorizontalOptions="EndAndExpand" FontSize="20"  Margin="0,0,5,0" Text="Nova Pergunta" TextColor="#000449" Clicked="Nova_Clicked"/>
+                    </Grid>
+                </StackLayout>
+                <Frame x:Name="frm_carregando" IsVisible="false" Grid.Row="0" Grid.Column="0" BackgroundColor="White" HeightRequest="90" WidthRequest="100" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" >
+                    <StackLayout>
+                        <ActivityIndicator Color="#000449"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  IsEnabled="true" IsRunning="true" IsVisible="true" BackgroundColor="Transparent"/>
+                        <Label Text="Carregando ..."  FontSize="Small" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" />
+                    </StackLayout>
+                </Frame>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

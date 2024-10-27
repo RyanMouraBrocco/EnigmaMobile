@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="Enigma.AddPerguntaPage" BackgroundImage="FundoMenu.jpg"
+             >
+    <ContentPage.Content>
+         <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+                <ScrollView Grid.Row="0" Grid.Column="0">
+                    <StackLayout>
+                        <StackLayout.Padding>
+                            <OnPlatform x:TypeArguments="Thickness" iOS="5,20,5,0" Android="0,0,0,0"/>
+                        </StackLayout.Padding>
+                        <Image HorizontalOptions="EndAndExpand" Source="SairBotao.png" HeightRequest="25" WidthRequest="25" x:Name="BtnSair"/>
+                             <StackLayout VerticalOptions="CenterAndExpand"  Margin="5,5,5,5">
+                            <Label BackgroundColor="Transparent" HorizontalOptions="CenterAndExpand" FontAttributes="Bold" FontSize="40" Text="Nova Pergunta" TextColor="#000449"/>
+                            <Frame VerticalOptions="Center">
+                                <StackLayout>
+                                    <Entry Placeholder="Título" PlaceholderColor="Gray" MaxLength="50" FontSize="Medium" HorizontalOptions="FillAndExpand" x:Name="txttitulo"/>
+                                    <Label Text="Pergunta" TextColor="Black"/>
+                                    <Editor HorizontalOptions="FillAndExpand" HeightRequest="50" VerticalOptions="FillAndExpand" x:Name="txtpergunta"/>
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="*"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Button Text="Tirar Foto" HorizontalOptions="CenterAndExpand" Grid.Row="0" Grid.Column="0" Clicked="Tirar_ClickedAsync"/>
+                                        <Button Text="Escolher do Álbum" HorizontalOptions="CenterAndExpand" Grid.Row="1" Grid.Column="0" Clicked="Escolher_ClickedAsync"/>
+                                        <ListView x:Name="list" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2">
+                                            <ListView.ItemTemplate>
+                                                <DataTemplate>
+                                                    <ViewCell>
+                                                        <Image Source="{Binding Source}"/>
+                                                    </ViewCell>
+                                                </DataTemplate>
+                                            </ListView.ItemTemplate>
+                                        </ListView>
+                                    </Grid>
+                                </StackLayout>
+                            </Frame>
+                            <Button Text="Enviar" TextColor="White" BackgroundColor="#000449" HorizontalOptions="FillAndExpand" HeightRequest="50" Clicked="Handle_ClickedAsync"/> 
+                        </StackLayout>
+                    </StackLayout>
+                </ScrollView>
+
+                <Frame x:Name="frm_carregando" IsVisible="false" Grid.Row="0" Grid.Column="0" BackgroundColor="White" HeightRequest="90" WidthRequest="100" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" >
+                    <StackLayout>
+                        <ActivityIndicator Color="#000449"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  IsEnabled="true" IsRunning="true" IsVisible="true" BackgroundColor="Transparent"/>
+                        <Label Text="Carregando ..."  FontSize="Small" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" />
+                    </StackLayout>
+                </Frame>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

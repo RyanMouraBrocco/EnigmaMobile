@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:ep = "clr-namespace:Enigma;assembly=Enigma"
+            x:Class="Enigma.AbasPage" Title="Enigma" BarTextColor="White" BarBackgroundColor="#000449"
+            >
+    <TabbedPage.Children>
+        <ep:MateriasPage Title="Matérias" Icon="livros.png"/>
+        <ep:ForumPage Title="Fórum" Icon="duvida.png"/>
+    </TabbedPage.Children>
+</TabbedPage>

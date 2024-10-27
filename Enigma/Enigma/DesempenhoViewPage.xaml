@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Enigma.DesempenhoViewPage"
+             Title="Desempenho" BackgroundImage="FundoMenu.jpg">
+    <ContentPage.Content>
+        <StackLayout >
+           <StackLayout VerticalOptions="CenterAndExpand"> 
+                <Label TextColor="#000449" x:Name="lblmateria" FontSize="Large"  HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center"/>
+                <Frame  HorizontalOptions="FillAndExpand" Margin="5,5,5,5">
+                    <StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Desempenho:" TextColor="#000449" FontSize="Large"/> 
+                            <Label x:Name="lbldesempenho" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" TextColor="#000449" FontSize="Large"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="H. Estudadas:" TextColor="#000449" FontSize="Large"/> 
+                            <Label x:Name="lblhoras" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" TextColor="#000449" FontSize="Medium"/>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+                <Button HorizontalOptions="FillAndExpand" Text="Ver Notas" BackgroundColor="#000449" TextColor="White" Clicked="Notas_ClickedAsync"/>
+            </StackLayout>
+            <Button BackgroundColor="Red"  Text="Fechar" Margin="5,5,5,5" HorizontalOptions="FillAndExpand" VerticalOptions="End" TextColor="White" Clicked="Handle_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

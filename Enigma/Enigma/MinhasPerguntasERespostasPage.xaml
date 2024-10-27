@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="Enigma.MinhasPerguntasERespostasPage" BackgroundColor="#000449">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#000449" >
+            <StackLayout.Padding>
+                <OnPlatform x:TypeArguments="Thickness" iOS="0,20,0,0" Android="0,0,0,0"/>
+            </StackLayout.Padding>
+            <Grid HeightRequest="70">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                 <Label Text="Minhas Perg./Resp." Grid.Row="0" Grid.Column="0" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="White"  BackgroundColor="#000449" HeightRequest="40" VerticalOptions="FillAndExpand" FontSize="Large" HorizontalOptions="FillAndExpand"/>
+                 <Image Grid.Row="0" Grid.Column="0" HorizontalOptions="End" VerticalOptions="FillAndExpand" BackgroundColor="#000449" Source="SairBotao.png" x:Name="btnsair" HeightRequest="30" WidthRequest="30"/>
+            </Grid>
+            <Label Text="Perguntas" TextColor="White" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" BackgroundColor="#000449" FontSize="Large"/>
+            <ListView BackgroundColor="White" RowHeight="60" x:Name="Lv_Perguntas" ItemTapped="Pergunta_ItemTappedAsync" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Orientation="Horizontal">
+                                <Label Text="{Binding ID}" IsVisible="false"/>
+                                <Label Text="{Binding Titulo}" TextColor="Black" /> 
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Label Text="Respostas" TextColor="White"  HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center" VerticalOptions="CenterAndExpand" BackgroundColor="#000449" FontSize="Large"/>
+            <ListView BackgroundColor="White" RowHeight="60" x:Name="Lv_Respostas" ItemTapped="Resposta_ItemTappedAsync">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Orientation="Horizontal">
+                                <Label Text="{Binding Pergunta.ID}" IsVisible="false"/>
+                                <Label Text="{Binding Titulo}" TextColor="Black" /> 
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="Enigma.PerguntaViewPage"
+             Title="Fórum" BackgroundImage="FundoMenu.jpg">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+                <ScrollView Grid.Row="0" Grid.Column="0">
+                    <StackLayout Margin="10,10,10,10">
+                        <Frame>
+                            <StackLayout>
+                                <StackLayout x:Name="stlusuario" Orientation="Horizontal" >
+                                    
+                                </StackLayout>
+                                <Label HorizontalOptions="CenterAndExpand" FontSize="30" x:Name="lbltitulo"/>
+                                <Label x:Name="lblpergunta" HorizontalOptions="FillAndExpand" FontSize="20"/>
+                                <StackLayout HorizontalOptions="CenterAndExpand" x:Name="stlimagenspergunta">
+                                    
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                    <Image Source="like.png" WidthRequest="40" HorizontalOptions="FillAndExpand" HeightRequest="40" x:Name="imgperguntalike"/>
+                                    <Image Source="dislike.png" WidthRequest="40" HorizontalOptions="FillAndExpand" HeightRequest="40" x:Name="imgperguntadislike"/>
+                                    <Button BackgroundColor="Transparent" Text="Denuciar" TextColor="#000449" WidthRequest="40" HorizontalOptions="FillAndExpand" HeightRequest="40" Clicked="Denuncia_ClickedAsync" x:Name="denuciarperguta"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame>
+                        <Button Text="Responder" BackgroundColor="#000449"  HeightRequest="60" HorizontalOptions="FillAndExpand" TextColor="White" FontSize="20" Clicked="Handle_ClickedAsync"/>
+                        <Frame>
+                            <StackLayout>
+                                <Label Text="Respostas" HorizontalOptions="StartAndExpand" FontSize="30"/>
+                                <StackLayout HorizontalOptions="FillAndExpand" x:Name="stlrespostas">
+                                    
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame>
+                    </StackLayout>
+                </ScrollView>
+
+
+                <Frame x:Name="frm_carregando" IsVisible="true" Grid.Row="0" Grid.Column="0" BackgroundColor="White" HeightRequest="90" WidthRequest="100" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" >
+                    <StackLayout>
+                        <ActivityIndicator Color="#000449"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  IsEnabled="true" IsRunning="true" IsVisible="true" BackgroundColor="Transparent"/>
+                        <Label Text="Carregando ..."  FontSize="Small" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" />
+                    </StackLayout>
+                </Frame>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Enigma.LoginPage"
+             BackgroundImage="FundoA.png">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+             <ScrollView Grid.Row="0" Grid.Column="0" >
+                <StackLayout  VerticalOptions="CenterAndExpand">
+                    <StackLayout.Padding>
+                            <OnPlatform x:TypeArguments="Thickness"  iOS="15,15,15,15" Android="30,30,30,30"  />
+                     </StackLayout.Padding>
+                     <Frame  BackgroundColor="White"  BorderColor="White" >
+                        <StackLayout>
+                            <Image Source="Enigma_Logo_V2.png" HorizontalOptions="Start" VerticalOptions="Start"/>
+                            <Label Text="________________________" TextColor="Silver" HorizontalOptions="CenterAndExpand"/>
+                            <Entry Placeholder="Login"  PlaceholderColor="Silver" TextColor="Black" Keyboard="Email"  FontSize="Default" HorizontalOptions="FillAndExpand" VerticalOptions="Start" x:Name="TxtLogin"/>
+                            <Entry Placeholder="Senha" PlaceholderColor="Silver" TextColor="Black" FontSize="Default" HorizontalOptions="FillAndExpand" VerticalOptions="Start" x:Name="TxtSenha" IsPassword="true"/>
+                            <Button Text="Logar"  BackgroundColor="#000449" TextColor="White" FontAttributes="Bold" FontSize="Medium" HeightRequest="70" Clicked="Handle_Clicked" x:Name="Btnlogar"/>
+                        </StackLayout>
+                    </Frame>
+                     <Button Text="Cadastrar-se"  BackgroundColor="Transparent" TextColor="White" FontAttributes="Bold" FontSize="Medium" Clicked="Handle_Clicked_1" x:Name="BtnNovo"/>
+                </StackLayout>
+            </ScrollView>
+            <Frame x:Name="frm_carregando" IsVisible="false" Grid.Row="0" Grid.Column="0" BackgroundColor="White" HeightRequest="90" WidthRequest="100" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" >
+                <StackLayout>
+                    <ActivityIndicator Color="#000449"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  IsEnabled="true" IsRunning="true" IsVisible="true" BackgroundColor="Transparent"/>
+                    <Label Text="Carregando ..."  FontSize="Small" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" />
+                </StackLayout>
+            </Frame>
+
+        </Grid>
+       
+
+    </ContentPage.Content>
+</ContentPage>

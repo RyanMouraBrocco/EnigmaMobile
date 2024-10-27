@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="Enigma.ConteudoView_Page">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Margin="5,5,5,5">
+                <StackLayout x:Name="stl">
+                    
+                </StackLayout>
+                <Button HorizontalOptions="FillAndExpand" Text="Exercícios" BackgroundColor="#000449" TextColor="White" Margin="5,5,5,5" HeightRequest="50" Clicked="Exercicio_Clicked" />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

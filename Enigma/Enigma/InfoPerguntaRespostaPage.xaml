@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="Enigma.InfoPerguntaRespostaPage" BackgroundImage="FundoMenu.jpg">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <StackLayout Grid.Row="0" Grid.Column="0">
+                <Frame Margin="5,5,5,5"  VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+                    <StackLayout>
+                        <Label TextColor="#000449" FontSize="Large" x:Name="txt_Titulo" />
+                        <StackLayout Orientation="Horizontal">
+                            <Label TextColor="#000449" FontSize="Medium" Text="Like(s): "/>
+                            <Label TextColor="#000449" FontSize="Medium" x:Name="txtlikes"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label TextColor="#000449" FontSize="Medium" Text="Dislike(s): "/>
+                            <Label TextColor="#000449" FontSize="Medium" x:Name="txtdislikes"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label TextColor="#000449" FontSize="Medium" Text="Denúncia(s): "/>
+                            <Label TextColor="#000449" FontSize="Medium" x:Name="txtdenucnias"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label TextColor="#000449" FontSize="Medium" Text="Visível: "/>
+                            <Switch x:Name="SwVisibilidade" Toggled="Handle_ToggledAsync"/>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+                <Button TextColor="White" BackgroundColor="#000449" VerticalOptions="Center" Text="Visualizar" Clicked="Handle_ClickedAsync"/>
+                <Button TextColor="White" BackgroundColor="Red"  Margin="5,5,5,5"  VerticalOptions="EndAndExpand" Text="Fechar" Clicked="Sair_Clicked"/>
+            </StackLayout>
+            <Frame x:Name="frm_carregando" IsVisible="false" Grid.Row="0" Grid.Column="0" BackgroundColor="White" HeightRequest="90" WidthRequest="100" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" >
+                <StackLayout>
+                    <ActivityIndicator Color="#000449"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"  IsEnabled="true" IsRunning="true" IsVisible="true" BackgroundColor="Transparent"/>
+                    <Label Text="Carregando ..."  FontSize="Small" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" />
+                </StackLayout>
+            </Frame>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

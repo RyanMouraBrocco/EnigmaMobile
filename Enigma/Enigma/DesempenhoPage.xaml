@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="Enigma.DesempenhoPage" BackgroundColor="#000449">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout.Padding>
+                <OnPlatform x:TypeArguments="Thickness" iOS="0,20,0,0" Android="0,0,0,0"/>
+            </StackLayout.Padding>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Grid.Column="0" Text="Desempenho"  FontSize="Large" TextColor="White" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Center"/>
+                <Image Grid.Row="0" Grid.Column="0" Source="SairBotao.png" Margin="0,0,5,0" x:Name="btnsair" HeightRequest="30" WidthRequest="30" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand"/>
+            </Grid>
+            <ListView x:Name="Lv_Materias" ItemTapped="Handle_ItemTappedAsync"  IsPullToRefreshEnabled="true" RefreshAllowed="true" Refreshing="Handle_Refreshing" BackgroundColor="White">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Label Text="{Binding ID}" IsVisible="false"/>
+                                <Label HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Text="{Binding Nome}" TextColor="#000449"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
